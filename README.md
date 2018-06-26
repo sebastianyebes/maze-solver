@@ -1,1 +1,1 @@
-maze-solver
+Maze Solver using Bread First Search
