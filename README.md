@@ -4,3 +4,5 @@
 Branches:
 - Main & DFS - Modified Implementation
 - BFS - Original Implementation (Source Code)
+
+**Sequence is as follows (UP, DOWN, LEFT, RIGHT)**
