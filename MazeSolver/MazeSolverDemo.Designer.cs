@@ -44,10 +44,10 @@
             this.radioTraversal = new System.Windows.Forms.RadioButton();
             this.radioCreateWall = new System.Windows.Forms.RadioButton();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureMaze = new System.Windows.Forms.PictureBox();
             this.objectTimer = new System.Windows.Forms.Timer(this.components);
             this.runnerXObject = new System.Windows.Forms.Timer(this.components);
+            this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -147,7 +147,7 @@
             this.chkDiagonal.AutoSize = true;
             this.chkDiagonal.Location = new System.Drawing.Point(55, 135);
             this.chkDiagonal.Name = "chkDiagonal";
-            this.chkDiagonal.Size = new System.Drawing.Size(86, 21);
+            this.chkDiagonal.Size = new System.Drawing.Size(84, 20);
             this.chkDiagonal.TabIndex = 0;
             this.chkDiagonal.Text = "Diagonal";
             this.chkDiagonal.UseVisualStyleBackColor = true;
@@ -157,7 +157,7 @@
             this.lblY.AutoSize = true;
             this.lblY.Location = new System.Drawing.Point(133, 518);
             this.lblY.Name = "lblY";
-            this.lblY.Size = new System.Drawing.Size(49, 17);
+            this.lblY.Size = new System.Drawing.Size(43, 16);
             this.lblY.TabIndex = 4;
             this.lblY.Text = "Y: 000";
             // 
@@ -166,7 +166,7 @@
             this.lblX.AutoSize = true;
             this.lblX.Location = new System.Drawing.Point(49, 518);
             this.lblX.Name = "lblX";
-            this.lblX.Size = new System.Drawing.Size(49, 17);
+            this.lblX.Size = new System.Drawing.Size(42, 16);
             this.lblX.TabIndex = 3;
             this.lblX.Text = "X: 000";
             // 
@@ -186,7 +186,7 @@
             this.radioTraversal.AutoSize = true;
             this.radioTraversal.Location = new System.Drawing.Point(32, 57);
             this.radioTraversal.Name = "radioTraversal";
-            this.radioTraversal.Size = new System.Drawing.Size(89, 21);
+            this.radioTraversal.Size = new System.Drawing.Size(86, 20);
             this.radioTraversal.TabIndex = 6;
             this.radioTraversal.Text = "Traversal";
             this.radioTraversal.UseVisualStyleBackColor = true;
@@ -197,7 +197,7 @@
             this.radioCreateWall.Checked = true;
             this.radioCreateWall.Location = new System.Drawing.Point(32, 30);
             this.radioCreateWall.Name = "radioCreateWall";
-            this.radioCreateWall.Size = new System.Drawing.Size(109, 21);
+            this.radioCreateWall.Size = new System.Drawing.Size(105, 20);
             this.radioCreateWall.TabIndex = 5;
             this.radioCreateWall.TabStop = true;
             this.radioCreateWall.Text = "Create Walls";
@@ -210,15 +210,9 @@
             this.aboutToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1050, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(1050, 30);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
-            // 
-            // aboutToolStripMenuItem
-            // 
-            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(62, 24);
-            this.aboutToolStripMenuItem.Text = "About";
             // 
             // pictureMaze
             // 
@@ -240,6 +234,13 @@
             // 
             this.runnerXObject.Interval = 500;
             this.runnerXObject.Tick += new System.EventHandler(this.runnerObject_Tick);
+            // 
+            // aboutToolStripMenuItem
+            // 
+            this.aboutToolStripMenuItem.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold);
+            this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(153, 26);
+            this.aboutToolStripMenuItem.Text = "Depth-First Search";
             // 
             // MazeSolverDemo
             // 
@@ -274,7 +275,6 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.CheckBox chkDiagonal;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
         private System.Windows.Forms.PictureBox pictureMaze;
         private System.Windows.Forms.Label lblY;
         private System.Windows.Forms.Label lblX;
@@ -289,6 +289,7 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Timer objectTimer;
         private System.Windows.Forms.Timer runnerXObject;
+        private System.Windows.Forms.ToolStripMenuItem aboutToolStripMenuItem;
     }
 }
 
