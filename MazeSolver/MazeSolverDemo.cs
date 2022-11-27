@@ -64,7 +64,7 @@ namespace MazeSolver
         
             if (!traversing)
             {
-                BFS dfs = new BFS();
+                DFS dfs = new DFS();
                 destBlock = dfs.GetBlockPointedByCursor(maze.BlockList, new Point(e.X, e.Y));
                 if (destBlock != null)
                 {

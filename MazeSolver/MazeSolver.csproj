@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithm\BFS.cs" />
+    <Compile Include="Algorithm\DFS.cs" />
     <Compile Include="Block.cs" />
     <Compile Include="MazeSolverDemo.cs">
       <SubType>Form</SubType>

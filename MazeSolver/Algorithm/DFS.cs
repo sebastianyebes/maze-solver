@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace MazeSolver.Algorithm
 {
-    class BFS
+    class DFS
     {
-        public BFS(){ }
+        public DFS(){ }
 
         public Block GetStartingPosition(Block[,] block)
         {
