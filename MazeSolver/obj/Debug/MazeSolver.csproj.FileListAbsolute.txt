@@ -17,3 +17,14 @@ D:\Git Clones\maze-solver\MazeSolver\obj\Debug\MazeSolver.Properties.Resources.r
 D:\Git Clones\maze-solver\MazeSolver\obj\Debug\MazeSolver.csproj.GenerateResource.Cache
 D:\Git Clones\maze-solver\MazeSolver\obj\Debug\MazeSolver.exe
 D:\Git Clones\maze-solver\MazeSolver\obj\Debug\MazeSolver.pdb
+C:\Users\Administrator\Desktop\IS\MazeSolver\obj\Debug\MazeSolver.csproj.AssemblyReference.cache
+C:\Users\Administrator\Desktop\IS\MazeSolver\obj\Debug\MazeSolver.csproj.SuggestedBindingRedirects.cache
+C:\Users\Administrator\Desktop\IS\MazeSolver\obj\Debug\MazeSolver.MazeSolverDemo.resources
+C:\Users\Administrator\Desktop\IS\MazeSolver\obj\Debug\MazeSolver.Properties.Resources.resources
+C:\Users\Administrator\Desktop\IS\MazeSolver\obj\Debug\MazeSolver.csproj.GenerateResource.cache
+C:\Users\Administrator\Desktop\IS\MazeSolver\obj\Debug\MazeSolver.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Desktop\IS\MazeSolver\obj\Debug\MazeSolver.exe
+C:\Users\Administrator\Desktop\IS\MazeSolver\obj\Debug\MazeSolver.pdb
+C:\Users\Administrator\Desktop\IS\MazeSolver\bin\Debug\MazeSolver.exe.config
+C:\Users\Administrator\Desktop\IS\MazeSolver\bin\Debug\MazeSolver.exe
+C:\Users\Administrator\Desktop\IS\MazeSolver\bin\Debug\MazeSolver.pdb
