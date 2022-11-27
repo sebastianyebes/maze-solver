@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace MazeSolver.Algorithm
 {
-    class BFS
+    // Rename from BFS to DFS
+    class DFS
     {
-        public BFS(){ }
+        public DFS(){ }
 
         public Block GetStartingPosition(Block[,] block)
         {
@@ -46,11 +47,12 @@ namespace MazeSolver.Algorithm
             return currentBlock;
         }
 
-        public Queue<Block> Traverse(Block[,] block, Block pointedByCursor, bool allowDiagonal)
+        // Modified Method
+        // Change Queue to Stack & modified other components
+        public Stack<Block> Traverse(Block[,] block, Block pointedByCursor, bool allowDiagonal)
         {
-            Queue<Block> queue = new Queue<Block>();
-            Queue<Block> qPath = new Queue<Block>();
-
+            Stack<Block> sPath = new Stack<Block>();
+            Stack<Block> stack = new Stack<Block>();
 
             if (!pointedByCursor.IsWall)
             {
@@ -63,12 +65,12 @@ namespace MazeSolver.Algorithm
                 int l = 0;
 
                 origin.Add(k++, startingPosition);
-                queue.Enqueue(startingPosition);
+                stack.Push(startingPosition);
                 path.Add(l++, startingPosition);
 
-                while (queue.Count != 0)
+                while (stack.Count != 0)
                 {
-                    Block currentBlock = queue.Dequeue();
+                    Block currentBlock = stack.Pop();
                     currentBlock.IsVisited = true;
 
                     Point pCurrentPoint = currentBlock.ID;
@@ -76,9 +78,9 @@ namespace MazeSolver.Algorithm
                     if (pCurrentPoint.X == pointedByCursor.ID.X && pCurrentPoint.Y == pointedByCursor.ID.Y)
                         break;
 
-                    bool notInQueue = !queue.Contains(currentBlock);
+                    bool notInStack = !stack.Contains(currentBlock);
 
-                    if (notInQueue)
+                    if (notInStack)
                     {
                         // UP
                         if (pCurrentPoint.Y > 0 && pCurrentPoint.Y < MazeSolver.BLOCKS_ROW)
@@ -89,7 +91,7 @@ namespace MazeSolver.Algorithm
                                 up = block[pCurrentPoint.Y-1, pCurrentPoint.X-1];
                             if (!up.IsWall && !up.IsVisited)
                             {
-                                queue.Enqueue(up);
+                                stack.Push(up);
                                 path.Add(l++, up);
                                 origin.Add(k++, block[pCurrentPoint.Y, pCurrentPoint.X]);
                                 if (up.ID.X == pointedByCursor.ID.X && up.ID.Y == pointedByCursor.ID.Y)
@@ -108,7 +110,7 @@ namespace MazeSolver.Algorithm
 
                             if (!down.IsWall && !down.IsVisited)
                             {
-                                queue.Enqueue(down);
+                                stack.Push(down);
                                 path.Add(l++, down);
                                 origin.Add(k++, block[pCurrentPoint.Y, pCurrentPoint.X]);
                                 if (down.ID.X == pointedByCursor.ID.X && down.ID.Y == pointedByCursor.ID.Y)
@@ -125,7 +127,7 @@ namespace MazeSolver.Algorithm
                                 left = block[pCurrentPoint.Y + 1, pCurrentPoint.X-1];
                             if (!left.IsWall && !left.IsVisited)
                             {
-                                queue.Enqueue(left);
+                                stack.Push(left);
                                 path.Add(l++, left);
                                 origin.Add(k++, block[pCurrentPoint.Y, pCurrentPoint.X]);
 
@@ -145,7 +147,7 @@ namespace MazeSolver.Algorithm
 
                             if (!right.IsWall && !right.IsVisited)
                             {
-                                queue.Enqueue(right);
+                                stack.Push(right);
                                 path.Add(l++, right);
                                 origin.Add(k++, block[pCurrentPoint.Y, pCurrentPoint.X]);
 
@@ -161,7 +163,7 @@ namespace MazeSolver.Algorithm
 
                 endBlockStack.BlockColor = Brushes.Cyan;
                 Block getPath = endBlockStack;
-                qPath.Enqueue(getPath);
+                sPath.Push(getPath);
 
                 while (!getPath.Equals(startingPosition))
                 {
@@ -173,13 +175,13 @@ namespace MazeSolver.Algorithm
                             prevPath = origin[b];
                             getPath.IsPath = true;
                             getPath.BlockColor = Brushes.Cyan;
-                            qPath.Enqueue(getPath);
+                            sPath.Push(getPath);
                             break;
                         }
                     }
                 }
             }
-            Queue<Block> rev = new Queue<Block>(qPath.Reverse());
+            Stack<Block> rev = new Stack<Block>(sPath.Reverse());
             return rev;
         } 
     }

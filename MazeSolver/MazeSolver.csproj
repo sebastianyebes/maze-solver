@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>MazeSolver</RootNamespace>
     <AssemblyName>MazeSolver</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <TargetFrameworkProfile />
@@ -46,7 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Algorithm\BFS.cs" />
+    <Compile Include="Algorithm\DFS.cs" />
     <Compile Include="Block.cs" />
     <Compile Include="MazeSolverDemo.cs">
       <SubType>Form</SubType>

@@ -55,8 +55,10 @@ namespace MazeSolver
         }
        
         private Block destBlock;
-        private Queue<Block> queuePath;
+        private Stack<Block> stackPath;
         private bool traversing = false;
+
+        // Modify variable type to Stack
         private void pictureMaze_MouseMove(object sender, MouseEventArgs e)
         {
             lblX.Text = "X: " + e.X.ToString();
@@ -64,7 +66,7 @@ namespace MazeSolver
         
             if (!traversing)
             {
-                BFS dfs = new BFS();
+                DFS dfs = new DFS();
                 destBlock = dfs.GetBlockPointedByCursor(maze.BlockList, new Point(e.X, e.Y));
                 if (destBlock != null)
                 {
@@ -73,7 +75,7 @@ namespace MazeSolver
 
                     if (radioTraversal.Checked)
                     {
-                        queuePath = dfs.Traverse(maze.BlockList, destBlock, chkDiagonal.Checked);
+                        stackPath = dfs.Traverse(maze.BlockList, destBlock, chkDiagonal.Checked);
                     }
                 }
                 else
@@ -160,9 +162,9 @@ namespace MazeSolver
         private void objectTimer_Tick(object sender, EventArgs e)
         {
             traversing = true;
-            while (queuePath.Count != 0)
+            while (stackPath.Count != 0)
             {
-                b = queuePath.Dequeue();
+                b = stackPath.Pop();
                 b.BlockColor = null;
                 b.IsCurrentPosition = false;
                 runnerXObject.Enabled = true;
@@ -171,7 +173,7 @@ namespace MazeSolver
                     pictureMaze.Refresh();
                 });
 
-                if (queuePath.Count == 0)
+                if (stackPath.Count == 0)
                 {
                     b.IsCurrentPosition = true;
                     objEllipse.X = b.ID.X * 25 + 5;
