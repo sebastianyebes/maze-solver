@@ -48,12 +48,11 @@ namespace MazeSolver.Algorithm
         }
 
         // Modified Method
-        // Change Queue to Stack 
+        // Change Queue to Stack & modified other components
         public Stack<Block> Traverse(Block[,] block, Block pointedByCursor, bool allowDiagonal)
         {
-            Stack<Block> stack = new Stack<Block>();
             Stack<Block> sPath = new Stack<Block>();
-
+            Stack<Block> stack = new Stack<Block>();
 
             if (!pointedByCursor.IsWall)
             {
